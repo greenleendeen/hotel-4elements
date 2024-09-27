@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Eval tableaux et formulaires</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <form class=" " action="" method="GET" id="mon-formulaire" novalidate>
+
+        <!--Nom/Prenom-->
+
+        <fieldset>
+            <legend> Vos informations personnelles</legend>
+
+            <div>
+                <label for="nom">Votre nom</label>
+                <input type="text" name="nom" id="nom" />
+                <p class="p-error d-none" id="error-nom"> erreur nom</p>
+            </div>
+
+            <div>
+                <label for="prenom">Votre prénom</label>
+                <input type="text" name="prenom" id="prenom" />
+                <p class="p-error d-none" id="error-prenom"> erreur prenom</p>
+            </div>
+
+            <!-- email -->
+            <div>
+                <label for="email">Votre adresse email</label>
+                <input type="email" name="email" id="email">
+                <p class="p-error d-none" id="error-email"> erreur adresse e-mail</p>
+            </div>
+
+
+        </fieldset>
+
+
+        <fieldset>
+            <legend> Choisissez un mot de passe: </legend>
+            <!-- Mot de passe et confirmation -->
+            <div>
+                <div>
+                    <label for="mdp">Choisissez votre mot de passe</label>
+                    <input type="password" name="mdp" id="mdp">
+                    <p class="p-error d-none" id="error-mdp"> erreur mot de passe non conforme</p>
+                </div>
+
+                <div>
+                    <label for="mdp-rep">Confirmez votre mot de passe</label>
+                    <input type="password" name="mdp-rep" id="mdp-rep">
+                    <p class="p-error d-none" id="error-mdp-rep"> erreur: le mot de passe doit être identique</p>
+                </div>
+            </div>
+        </fieldset>
+
+        <!--Choix abonnement: Liste déroulante-->
+        <div>
+            <label for="abonnement">Choisissez votre abonnement</label>
+                <div>
+                    <label for="basic">basic</label>
+                    <input type="radio" name="basic" id="basic" value=basic>
+                </div>
+                <div>
+                    <label for="premium">Premium</label>
+                    <input type="radio" name="premium" id="premium" value=premium>
+                </div>
+                <div>
+                    <label for="professionnel">Professionnel</label>
+                    <input type="radio" name="professionnel" id="professionnel" value=professionnel>
+                </div>
+
+            <p class="p-error d-none" id="error-abonnement"> choisissez une option</p>
+
+        </div>
+        <!-- hidden: si choix "professionnel": déroule "Siret" et "nombrePostes"-->
+        <fieldset id="siPro" class="hidden">
+        <div>
+            <label for="siret">Veuillez renseigner votre SIRET</label>
+            <input type="number" name="siret" id="siret" />
+            <p class="p-error d-none" id="error-siret"> erreur : le siret n'est pas conforme</p>
+        </div>
+
+        <!-- Liste déroulante choix nombre de postes-->
+        <div>
+            <label for="nombrePostes">Choisissez le nombre de postes</label>
+            <select name="nombrePostes" id="nombrePostes">
+                <option value=""> nombre de postes</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <p class="p-error d-none" id="error-nombrePostes"> Veuillez chosir un nombre de postes</p>
+        </div>
+
+        </fieldset>
+
+        <div>
+            <label for="cgu">Veuillez accepter les CGU </label>
+            <input type="checkbox" name="cgu" id="cgu">
+            <p class="p-error d-none" id="error-cgu">veuillez accepter le CGU</p>
+        </div>
+
+
+        <!-- Le "bouton" pour envoyer le formulaire-->
+        <input type="submit" value="Enregister les informations">
+    </form>
+
+
+    <script src="./app.js" defer></script>
+
+</body>
+
+</html>
